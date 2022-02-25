@@ -1,9 +1,6 @@
 <!-- 
 TODO:
 Speed toggle
-Make glyphs vertically aligned with text
-Highlight erronous snippets
-Put on web?
 Swap around plus order
 -->
 
@@ -44,9 +41,15 @@ Swap around plus order
  -->
         <div class="content-section eq-bar" >
             <button onclick="equation(true, '\\next')"><i class="bi-plus-circle-fill" style="font-size: 1.3rem; color:#808080; margin-left: 10px;"></i></button>
+<!--             <bold><input type="text" style="margin-top:5px"></bold> -->
+            <div style="float:right; padding-right:10px; padding-top:3px; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+                <input type="checkbox" id="fast" name="fast" value="Fast">
+                <label for="fast">Fast mode</label>
+                <!-- &nbsp; &nbsp; &nbsp;
+                <input type="checkbox" id="visual" name="visual" value="Visual">
+                <label for="visual">Pen Visualization</label> -->
+            </div>
 
-<!--             <bold><input type="text" style="margin-top:5px"></bold>
- -->
             <hr style="margin-top: -2px; margin-bottom: 3px;">
 
             <ul class="list-group" style="padding-bottom: 5px;">

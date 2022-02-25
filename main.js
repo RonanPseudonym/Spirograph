@@ -2,6 +2,7 @@ let count = 0;
 let speed = 1;
 let ipf = 3;
 let pens = [];
+let is_fast;
 
 function preload() {
 	img = loadImage("assets/plate.png");
@@ -13,6 +14,8 @@ function setup() {
 	pens.push(new Pen(0, 0));
 
 	render_eq();
+
+	is_fast = $('#fast');
 }
 
 function clear_screen() {
@@ -21,9 +24,14 @@ function clear_screen() {
 
 function draw() {
 	count += 1;
+	clear()
 	background(color(250, 250, 250));
 	translate(width / 2, height / 2);
 	img.loadPixels();
+
+	ipf = is_fast.prop('checked') ? 100 : 3;
+	// console.log(speed);
+	// console.log("Hi");
 
 	for (let i = 0; i < ipf; i ++) {
 		rotate(PI / 180 * count * speed);
@@ -44,4 +52,10 @@ function draw() {
 
 	img.updatePixels();
 	image(img, 0, 0, 400, 400);
+
+	// for (let i = 0; i < pens.length; i ++) {
+	// 	let pos = pens[i].to_p5_coords();
+	// 	fill(color(pens[i].c_r, pens[i].c_g, pens[i].c_b));
+	// 	ellipse(pos.x, pos.y, 20, 20);
+	// }
 }

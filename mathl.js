@@ -252,11 +252,7 @@ var latex_to_js = function(input) {
 
     return input;
   };
-  try{
-    return init();
-  }catch(e){
-    throw("syntax error");
-  }
+  return init();
   
 };
 
@@ -283,6 +279,9 @@ function send_data(fields) {
   for (let i = 0; i < fields.length; i++) {
       equations[fields[i].pen].children[fields[i].index].content = fields[i].field.latex();
     try {
+      // let a = fields[i].field.latex();
+      // console.log(a);
+      // console.log(latex_to_js(a));
       pens[fields[i].pen].equations.push(latex_to_js(fields[i].field.latex()));
     } catch {
       // This is only gonna update if my equation is valid
